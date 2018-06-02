@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            CrystalCollector
+        </title>
+        <link rel="shortcut icon" type="image/jpg" href="assets/images/crystal-yellow.jpg">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css" > 
+        <script src="assets/javascript/game.js"></script>
+        <!-- Google fonts selections    1. (CSS= font-family: 'Frank Ruhl Libre', serif;) 2. (CSS=font-family: 'Frank Ruhl Libre', serif;
+        font-family: 'BenchNine', sans-serif; 3. (CSS=font-family: 'Frank Ruhl Libre', serif;
+        font-family: 'BenchNine', sans-serif;
+        font-family: 'Sorts Mill Goudy', serif;-->
+        <link href="https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=BenchNine|Frank+Ruhl+Libre" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=BenchNine|Frank+Ruhl+Libre|Sorts+Mill+Goudy" rel="stylesheet">
+    </head>
+    <body onload="initialload()">
+        <div class="headerbackground">
+                <nav class="navbar navbar-default navbar-fixed-top">
+                        <div class="container-fluid">
+                          <!-- Brand and toggle get grouped for better mobile display -->
+                          <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed pull-right" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" >
+                              <span class="sr-only">Toggle navigation</span>
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                            </button>
+
+                            <a class="navbar-brand" href="https://en.wikipedia.org/wiki/Hangman_(game)" target="_blank">
+                                <span class="glyphicon glyphicon-globe" aria-hidden="true">Crystals Collector Game</span>
+                            </a>
+                          </div>
+                        </div><!-- /.container-fluid -->
+                </nav>
+        </div>
+        <div class="jumbotron">
+                <h1 class="display-h1">Crystal Collector Game</h1>
+                <div class="jumbo-theme">
+                        <hr class="my-4" >
+                        <h3 class="display-h2"></h3>
+                        <!-- <h3 class="display-h2">Game Theme:</h3> -->
+                </div>
+              </div>
+        <!-- <div>
+            <br> <br>
+        </div> -->
+
+        <!-- Main Body of the Page-->
+        <div class="container">
+                <!--Side bar menu for selection> -->
+                <div class="row1">
+                        <div class="col-md-9 side-bar">
+                                 <aside class="asidestyle1">
+                                        <h4> Game Rules...</h4>
+                                        <table class="stattable">
+                                                <tr>
+                                                        <td>
+                                                                <label id="gameRules"></label>
+                                                                <div>
+                                                                        <p style="text-align: left;" >You will be given a random number at the start of the game.</p> 
+                                                                        <p style="text-align: left;" >There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p> 
+                                                                        <p style="text-align: left;" >You win the game by matching your total score to random number, you loose the game if your total score goes above the random number.</p> 
+                                                                        <p style="text-align: left;" >The value of each crystal is hidden from you until you click on it.</p> 
+                                                                        <p style="text-align: left;" >Each time when the game starts, the game will change the value of each crystal.</p> 
+                                                                </div>
+                                                        </td>
+                                                </tr>
+                                        </table>  
+                                </aside>
+                        </div>
+                        <div class="col-md-3 side-bar">
+                                <aside class="asidestyle2">
+                                        <h4> Target Score</h4>
+                                        <table class="stattable">
+                                                <tr>
+                                                        <td ></td>
+                                                        <td>
+                                                        <label id="targetScore"></label>
+                                                        </td>
+                                                </tr>
+                                        </table>
+               
+                                </aside>
+
+                        </div>
+                </div>
+                <div class="row2">
+
+                </div>
+                <div class="row3">
+                        <div class="col-md-9 ">
+                                <div class="asidestyle3">
+                                        <h4> Crystals to Choose</h4>
+
+                                        <div class="crystalcase">
+                                                Crystal Case
+                                        </div>                                                         
+                                </div>
+                        </div>
+                        <div class="col-md-3 game-area">
+                                                        <aside class="asidestyle4">
+                                                                <h4> Game Statistics</h4>
+                                                                <h4 id="result"></h4>
+                                                                <table class="stattable">
+                                                                        <tr>
+                                                                                <td >Total Score:</td>
+                                                                                <td>
+                                                                                        <label id="totS"></label>
+                                                                                </td>
+                                                                        </tr>
+                                                                </table>
+                             
+                                                                <table class="stattable">
+                                                                        <tr>
+                                                                                <td >Total Wins:</td>
+                                                                                <td>
+                                                                                        <label id="totW"></label>
+                                                                                </td>
+                                                                        </tr>
+                                                                </table>
+                                                                <table class="stattable">
+                                                                        <tr>
+                                                                                <td >Total Losses:</td>
+                                                                                <td>
+                                                                                        <label id="totL"></label>
+                                                                                </td>
+                                                                        </tr>
+                                                                </table>                                                               
+                                                        </aside>
+                                                        <br>
+                        </div>
+                </div>
+        </div>
+
+        <footer class="footer position-sticky">
+                <div class="container">
+                  <span >Copyright &copy;.</span>
+                </div>
+        </footer>  
+
+        <!-- Jquery Scripts starts here -->
+        <script type="text/javascript">
+                $(document).ready(function(){
+
+                var totScore = 0;
+                //Initializing statistics variables for the first time
+                var totalScore = 0;
+                var totalWin = 0;
+                var totalLoss = 0;
+                $("#totS").text(totalScore);
+                $("#totW").text(totalWin);
+                $("#totL").text(totalLoss);    
+                var resetAndStart = function(){
+                        //Setting floor and ceiling values for target Score
+                        $(".crystalcase").empty();
+                        var minTarget = 19;
+                        var maxTarget = 120;
+                        //Setting floor and ceiling values for each crystals
+                        var minCrystalVal = 1;
+                        var maxCrystalVal = 12;
+                        //Initializing statistics variables
+                        var totalScore = 0;
+                        var totalWin = 0;
+                        var totalLoss = 0;
+                        $("#totS").text(totalScore);
+                        //$("#totW").text(totalWin);
+                        //$("#totL").text(totalLoss);                        
+                        //Generating Random Target Score and saving
+                        var targetRandomNum = Math.floor(Math.random() * (maxTarget - minTarget + 1)) + minTarget;
+                        $("#targetScore").text(targetRandomNum);
+                        console.log("Target Value= " + targetRandomNum);
+
+                        //defining Crystal images in an array
+                        var crystalImageTable = [
+                                'assets/images/crystal-ruby.jpg' , 
+                                'assets/images/crystal-rainbow.jpg' , 
+                                'assets/images/crystal-clear.jpg' ,
+                                'assets/images/crystal-emerald.jpg'
+                        ]
+
+                                //Creating 4 crystals and it's values each time game is started
+                                for (var i = 0; i < 4; i++){
+                                        var crystalValue = Math.floor(Math.random() * (maxCrystalVal - minCrystalVal + 1)) + minCrystalVal;
+                                        var crystal = $("<div>");
+                                        crystal.attr({"class": 'crystal', "data-random": crystalValue , "img": "image-responsive" });
+                                        // crystal.html(crystalValue);
+                                        $(".crystalcase").append(crystal);
+                                        //setting up the crystal images
+                                        crystal.css({"background-image": "url(" + crystalImageTable[i] + ")", "width": "150px", "background-repeat": "no-repeat" });
+                                        console.log("Crystal Value= " + crystalValue);
+                                }
+                        }
+                
+                        //Calling resetAndStart function first time
+                        resetAndStart();
+
+                        //$(".crystal").on("click", function(){
+                        $(document).on("click", ".crystal", function(){
+                                //Get current scores 
+                                var targetValue = parseInt($("#targetScore").text());
+                                var currValue = parseInt($(this).attr("data-random"));
+                                var totScore = parseInt($("#totS").text());
+                                var totWin = parseInt($("#totW").text());
+                                var totLoss = parseInt($("#totL").text());
+                                totScore +=  currValue;
+                                //Updates the score with the value of the clicked crystal image
+                                $("#totS").text(totScore);
+                                $("#result").text("");
+                                console.log("Target Score= " + targetValue + " Tot Score= " + totScore + "Tot W= " + totWin + " Tot L= " + totLoss);
+                        
+                                //Comparing Total Score and Target Score. If Total Score = Target Score, You Win. TotalWin count increase by 1.
+                                if (totScore === targetValue){
+                                        // If Total score matches the Target score, you win
+                                        totWin++;
+                                        $("#totW").text(totWin);
+                                        $("#result").text("You WON!!!");
+                                        // New game starts by calling the function
+                                        resetAndStart();
+                                }
+                                else if (totScore > targetValue){
+                                        // If Total score matches the Target score, you win
+                                        totLoss++;
+                                        $("#totL").text(totLoss);
+                                        $("#result").text("You LOST!!!");
+                                        // New game starts by calling the function
+                                        resetAndStart();
+                                }
+
+                        })      
+                })
+        </script>
+    </body>
+</html>        
